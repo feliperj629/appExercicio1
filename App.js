@@ -9,7 +9,7 @@ export default function App() {
 
   return (
     <View style={[styles.container, { backgroundColor: cor ? cor : "" }]}>
-      <Text style={{ fontSize: 24, marginBottom: 20 }}>Bem-vindo ao appExercicio1!</Text>
+      <Text style={styles.title}>Bem-vindo ao appExercicio1!</Text>
 
       <TextInput
         placeholder="Digite seu nome"
@@ -30,7 +30,7 @@ export default function App() {
         />
       </View>
 
-      
+
 
       <View style={styles.buttonContainer}>
         <Button title="Limpar" color="red"
@@ -41,7 +41,7 @@ export default function App() {
         placeholder="Digite uma cor:"
         value={cor}
         onChangeText={setCor}
-        style={styles.input}
+        style={styles.inputcolor}
       />
 
       {cor ? <Text style={styles.text}>{cor} </Text> : null}
@@ -66,6 +66,14 @@ const styles = StyleSheet.create({
     width: "80%",
     marginBottom: 20,
   },
+  inputcolor: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    padding: 10,
+    width: "80%",
+    marginBottom: 20,
+    marginTop: 20,
+  },
   text: {
     marginTop: 20,
     fontSize: 18
@@ -73,5 +81,9 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginVertical: 5,
     width: '20%',
+  },
+  title: {
+    fontSize: 24,
+    marginBottom: 20,
   },
 });
