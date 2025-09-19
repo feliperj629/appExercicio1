@@ -18,19 +18,24 @@ export default function App() {
         style={styles.input}
       />
 
-      <Button title="Mostrar mensagem"
-        onPress={() => {
-          setMensagem(`Olá, ${nome}!`);
-          setContar(contar + 1);
-        }
-        }
-      />
-
       {mensagem ? <Text style={styles.text}>{mensagem} {contar}</Text> : null}
 
+      <View style={styles.buttonContainer}>
+        <Button title="Mostrar mensagem"
+          onPress={() => {
+            nome ? setMensagem(`Olá, ${nome}!`) : null;
+            nome ? 'Num clique(s): ' + setContar(contar + 1) : null;
+          }
+          }
+        />
+      </View>
 
-      <Button title="Limpar"
-        onPress={() => { setNome(""); setMensagem(""); }} />
+      
+
+      <View style={styles.buttonContainer}>
+        <Button title="Limpar" color="red"
+          onPress={() => { setNome(""); setMensagem(""); }} />
+      </View>
 
       <TextInput
         placeholder="Digite uma cor:"
@@ -64,5 +69,9 @@ const styles = StyleSheet.create({
   text: {
     marginTop: 20,
     fontSize: 18
+  },
+  buttonContainer: {
+    marginVertical: 5,
+    width: '20%',
   },
 });
